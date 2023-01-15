@@ -1,0 +1,20 @@
+{
+  "register": [
+    {
+      "firstName": "sagar",
+      "lastName": "wakde",
+      "email": "sagar@gmail.com",
+      "phone": "9876543210",
+      "password": "12345",
+      "id": 4
+    },
+    {
+      "firstName": "prakash",
+      "lastName": "kabadi",
+      "email": "prakash@gmail.com",
+      "phone": "7620665243",
+      "password": "12345",
+      "id": 5
+    }
+  ]
+}

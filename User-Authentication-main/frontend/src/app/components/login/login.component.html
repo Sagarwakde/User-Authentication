@@ -1,0 +1,51 @@
+<div class="wrapper">
+    <section class="container">
+    <form [formGroup]="loginForm" (ngSubmit)="userLogin(loginForm.value)">
+
+        <!-- email  -->
+        <div class="label-input">
+            <div>
+                <label for="email">email id:</label>
+            </div>
+            <div>
+                <input class="input-box" type="email" name="email" placeholder="enter your email" formControlName ="email"> 
+    
+            </div>
+        </div>
+        <div class="errorContainer" *ngIf="loginForm.controls['email'].touched && !loginForm.controls ['email'].valid">
+            <span class="error" *ngIf="loginForm.controls['email'].hasError('required')">email is required</span>
+            <span class="error" *ngIf="loginForm.controls['email'].hasError('email')">enter the valid email id</span>
+        </div>
+        
+    
+        <!-- password  -->
+        <div class="label-input">
+            <div>
+                <label for="password">password:</label>
+            </div>
+            <div>
+                <input class="input-box" type="password" name="password" placeholder="enter your password" formControlName ="password"> 
+    
+            </div>
+        </div>
+        <div class="errorContainer" *ngIf="loginForm.controls['password'].touched && !loginForm.controls ['password'].valid">
+            <span class="error" *ngIf="loginForm.controls['password'].hasError('required')">password is required</span>
+            <span class="error" *ngIf="loginForm.controls['password'].hasError('password')">enter the valid password </span>
+            
+            <span class="error" *ngIf="loginForm.controls['password'].hasError('minlength')">minlength should be 3char</span>
+            <span class="error" *ngIf="loginForm.controls['password'].hasError('maxlength')">maxlength should be 10char</span>
+        </div>
+        
+        <!-- submit -->
+        <div class="label-input">
+            <div>
+                <input class="input-box btn"  type="submit" value="login">
+            </div>
+        </div>
+
+        <h3 class="errorContainer"><p class="error">{{authError}}</p></h3>
+
+    </form>
+       
+    </section>
+    </div>

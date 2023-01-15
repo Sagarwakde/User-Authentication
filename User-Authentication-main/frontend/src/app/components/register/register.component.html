@@ -1,0 +1,90 @@
+<div class="wrapper">
+<section class="container">
+    <form [formGroup]="registerForm" (ngSubmit)="createNewTask(registerForm.value)">
+    <!-- <form [formGroup] ="registerForm" (ngSubmit)="registerForm"> -->
+    <!-- first name  -->
+    <div class="label-input">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+        <div>
+            <label for="fname">first name:</label>
+        </div>
+        <div>
+            <input class="input-box" type="text" name="fname" placeholder="enter your first name" formControlName ="firstName">
+
+        </div>
+    </div>  
+    <div class="errorContainer" *ngIf="registerForm.controls['firstName'].touched && !registerForm.controls ['firstName'].valid">
+                <span class="error" *ngIf="registerForm.controls['firstName'].hasError('required')">first name is required</span>
+                <span class="error" *ngIf="registerForm.controls['firstName'].hasError('minlength')">minlength should be 3char</span>
+                <span class="error" *ngIf="registerForm.controls['firstName'].hasError('maxlength')">maxlength should be 10char</span>
+    </div>
+
+    <!-- last name-->
+    <div class="label-input">
+        <div>
+            <label for="lname">last name:</label>
+        </div>
+        <div>
+            <input class="input-box" type="text" name="lname" placeholder="enter your last name" formControlName ="lastName"> 
+
+        </div>
+    </div>
+    <div class="errorContainer" *ngIf="registerForm.controls['lastName'].touched && !registerForm.controls ['lastName'].valid">
+        <span class="error" *ngIf="registerForm.controls['lastName'].hasError('required')">last Name is required</span>
+        <span class="error" *ngIf="registerForm.controls['lastName'].hasError('minlength')">minlength should be 3char</span>
+        <span class="error" *ngIf="registerForm.controls['lastName'].hasError('maxlength')">maxlength should be 10char</span>
+</div>
+
+     <!-- phone number -->
+     <div class="label-input">
+        <div>
+            <label for="phone">phone no.:</label>
+        </div>
+        <div>
+            <input class="input-box" type="text" name="phone" placeholder="enter your phone number" formControlName ="phone"> 
+
+        </div>
+    </div>
+
+    <!-- email  -->
+    <div class="label-input">
+        <div>
+            <label for="email">email id:</label>
+        </div>
+        <div>
+            <input class="input-box" type="email" name="email" placeholder="enter your email" formControlName ="email"> 
+
+        </div>
+    </div>
+    <div class="errorContainer" *ngIf="registerForm.controls['email'].touched && !registerForm.controls ['email'].valid">
+        <span class="error" *ngIf="registerForm.controls['email'].hasError('required')">email is required</span>
+        <span class="error" *ngIf="registerForm.controls['email'].hasError('email')">enter the valid email id</span>
+    </div>
+
+    <!-- password  -->
+    <div class="label-input">
+        <div>
+            <label for="password">password:</label>
+        </div>
+        <div>
+            <input class="input-box" type="password" name="password" placeholder="enter your password" formControlName ="password"> 
+
+        </div>
+    </div>
+    <div class="errorContainer" *ngIf="registerForm.controls['password'].touched && !registerForm.controls ['password'].valid">
+        <span class="error" *ngIf="registerForm.controls['password'].hasError('required')">password is required</span>
+        <span class="error" *ngIf="registerForm.controls['password'].hasError('password')">enter the valid password </span>
+        
+        <span class="error" *ngIf="registerForm.controls['password'].hasError('minlength')">minlength should be 3char</span>
+        <span class="error" *ngIf="registerForm.controls['password'].hasError('maxlength')">maxlength should be 10char</span>
+    </div>
+
+    <!-- submit -->
+    <div class="label-input">
+        <div>
+            <input class="input-box btn"  type="submit" value="submit">
+        </div>
+    </div>
+</form>
+   
+</section>
+</div>
